@@ -1,6 +1,6 @@
-# Agency Site
+# HyberTec Portfolio
 
-A production-ready Next.js 15 marketing + portfolio site for a web development agency.
+A production-ready Next.js 15 marketing and portfolio site for HyberTec.
 
 ## Tech Stack
 
@@ -8,7 +8,7 @@ A production-ready Next.js 15 marketing + portfolio site for a web development a
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Fonts**: Syne (display) + Plus Jakarta Sans (body) via `next/font/google`
-- **Deploy**: Vercel (recommended)
+- **Deploy**: GitHub Pages via GitHub Actions
 
 ## Project Structure
 
@@ -46,9 +46,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Customization Checklist
 
 ### 1. Branding
-- [ ] Replace `YourAgency` in `Header.tsx` and `Footer.tsx` with your LLC name
-- [ ] Update the SVG logo icon in both components
-- [ ] Update `metadata` in `layout.tsx` with your real title + description
+- [ ] Update brand copy, logo, and metadata as needed in the layout components
 
 ### 2. Content
 - [ ] Edit `src/features/portfolio/data/projects.ts` — replace sample projects with real ones
@@ -76,12 +74,17 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Deployment
 
 ```bash
-# Build
-npm run build
-
-# Production build
+# Local production build
 npm run build
 ```
+
+The site is configured to deploy to GitHub Pages from the `main` branch through GitHub Actions.
+
+1. Push your latest changes to `main`
+2. In GitHub, open `Settings -> Pages`
+3. Set `Source` to `GitHub Actions`
+4. Wait for the `Deploy GitHub Pages` workflow to finish
+5. Open `https://hybertecofficial.github.io/portfolio/`
 
 Set the following environment variables in your hosting platform if using a form provider:
 ```
