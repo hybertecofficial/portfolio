@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+
+tsconfig.tsbuildinfo
+
+.env
+.env.*
+!.env.example
+
+.DS_Store
+
+.codex
+id_ed25520
+id_ed25520.pub

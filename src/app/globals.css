@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-syne: "Avenir Next", "Segoe UI", sans-serif;
+  --font-jakarta: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --bg: #0a0f14;
+  --surface: #101720;
+  --surface-2: #16202c;
+  --surface-3: #1b2734;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --cream: #f4efe6;
+  --cream-muted: #a9b2bb;
+  --lime: #c7ff63;
+  --lime-dim: #a6d64e;
+  --ink: #091017;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(199, 255, 99, 0.12), transparent 34%),
+    linear-gradient(180deg, #0b1118 0%, #0a0f14 55%, #081019 100%);
+  color: var(--cream);
+  font-family: var(--font-jakarta), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+@layer base {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(circle at center, black 44%, transparent 88%);
+    opacity: 0.5;
+    z-index: -1;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .opacity-0-init {
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .site-shell {
+    @apply mx-auto w-full max-w-7xl px-6;
+  }
+
+  .surface-panel {
+    @apply rounded-[28px] border border-white/10 bg-white/[0.03] shadow-[0_20px_80px_rgba(0,0,0,0.22)] backdrop-blur-sm;
+  }
+
+  .lime-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-lime/20 bg-lime/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-lime;
+  }
+
+  .section-label {
+    @apply text-xs font-medium uppercase tracking-[0.24em] text-cream-muted;
+  }
+
+  .eyebrow-line {
+    @apply h-px w-8 bg-lime/80;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-lime px-5 py-3 text-sm font-semibold text-ink transition-colors duration-200 hover:bg-lime-dim;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-medium text-cream transition-colors duration-200 hover:border-lime/30 hover:bg-white/[0.05];
+  }
+}
