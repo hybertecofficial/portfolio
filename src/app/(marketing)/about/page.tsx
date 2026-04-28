@@ -37,7 +37,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-24 border-b border-border relative overflow-hidden">
+      <section className="pt-20 pb-24 border-b border-border relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/shared/BrandMark";
 
 const footerLinks = {
   Services: [
@@ -20,18 +21,8 @@ export function Footer() {
         <div className="surface-panel overflow-hidden">
           <div className="grid gap-12 px-6 py-10 md:grid-cols-[1.3fr_0.7fr_0.7fr] md:px-10">
             <div className="max-w-lg">
-              <div className="mb-5 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-lime text-sm font-bold text-ink">
-                  HT
-                </span>
-                <div>
-                  <p className="font-display text-xl font-bold tracking-tight text-cream">
-                    HyberTec
-                  </p>
-                  <p className="text-xs uppercase tracking-[0.24em] text-cream-muted">
-                    Freelance requests handled well
-                  </p>
-                </div>
+              <div className="mb-5">
+                <BrandMark />
               </div>
 
               <p className="max-w-md text-sm leading-7 text-cream-muted">

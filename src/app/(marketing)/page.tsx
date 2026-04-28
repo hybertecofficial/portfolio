@@ -69,7 +69,7 @@ export default function HomePage() {
       <section className="pb-20 pt-10 sm:pt-14">
         <div className="site-shell">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl lg:-mt-8">
               <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-lime/20 bg-lime/10 px-4 py-2">
                 <span className="h-2 w-2 rounded-full bg-lime" />
                 <span className="text-xs font-medium uppercase tracking-[0.24em] text-lime">

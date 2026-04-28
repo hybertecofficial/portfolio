@@ -34,7 +34,7 @@ export default async function CaseStudyPage({ params }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="pt-24 pb-0 border-b border-border">
+      <section className="pt-16 pb-0 border-b border-border">
         <div className="max-w-7xl mx-auto px-6 pt-10 pb-12">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-8 font-body text-sm">

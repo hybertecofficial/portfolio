@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { BrandMark } from "@/components/shared/BrandMark";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -21,19 +22,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
       <div className="site-shell">
         <div className="surface-panel flex h-16 items-center justify-between px-4 sm:px-5">
-          <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-lime text-sm font-bold text-ink">
-              HT
-            </span>
-            <div className="leading-none">
-              <span className="block font-display text-lg font-bold tracking-tight text-cream">
-                HyberTec
-              </span>
-              <span className="block pt-1 text-[10px] font-medium uppercase tracking-[0.24em] text-cream-muted">
-                Software and web partners
-              </span>
-            </div>
-          </Link>
+          <BrandMark compact onClick={() => setOpen(false)} />
 
           <nav className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => {
