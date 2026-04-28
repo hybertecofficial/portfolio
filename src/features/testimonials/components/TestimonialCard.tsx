@@ -26,10 +26,10 @@ const testimonials: Testimonial[] = [
   {
     name: "David K.",
     role: "Founder",
-    company: "Grind & Co. Coffee",
+    company: "Retail Commerce Group",
     quote:
       "Going from zero online revenue to $18K a month was surreal. The team understood our brand from day one and built something that actually converts.",
-    result: "$0 → $18K/month online revenue",
+    result: "$0 to $18K/month online revenue",
   },
 ];
 

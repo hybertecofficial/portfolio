@@ -11,7 +11,7 @@ export const projects: Project[] = [
       "A conversion-optimized marketing site with live quoting and scheduling that tripled inbound leads in 90 days.",
     tags: ["Marketing Site", "Lead Gen", "Local SEO"],
     stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "Resend", "Vercel"],
-    hero: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80",
+    hero: "/hybertec-logo-centered.jpeg",
     problem:
       "Peak HVAC relied entirely on word-of-mouth. Their old site had no clear CTA, loaded slowly on mobile, and wasn't indexed by Google for local searches.",
     solution:
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       "A filterable property portal with MLS data integration, virtual tours, and a client dashboard for agents.",
     tags: ["Web App", "Dashboard", "API Integration"],
     stack: ["Next.js 15", "Prisma", "Supabase", "TypeScript", "Mapbox"],
-    hero: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
+    hero: "/hybertec-logo-centered.jpeg",
     problem:
       "Agents were manually sending spreadsheets of available listings to clients. There was no way for buyers to search, save, or schedule viewings online.",
     solution:
@@ -50,24 +50,24 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "grind-coffee",
-    title: "Grind & Co. — E-Commerce Rebrand",
-    client: "Grind & Co. Coffee Roasters",
-    industry: "Food & Beverage",
+    slug: "retail-commerce",
+    title: "Retail Commerce — E-Commerce Rebuild",
+    client: "Retail Commerce Group",
+    industry: "Retail",
     year: 2024,
     description:
-      "A full brand refresh and e-commerce build for an Atlanta-area specialty coffee roaster expanding nationally.",
+      "A full brand refresh and e-commerce build for a retail business expanding beyond local sales.",
     tags: ["E-Commerce", "Branding", "SEO"],
     stack: ["Next.js 15", "Shopify Storefront API", "TypeScript", "Tailwind CSS"],
-    hero: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80",
+    hero: "/hybertec-logo-centered.jpeg",
     problem:
-      "Grind & Co. was selling exclusively at farmers markets. Their online presence was a basic Squarespace site with poor product photography and no SEO strategy.",
+      "The business was selling mostly through local channels. Their online presence was a basic template site with weak product presentation and no SEO strategy.",
     solution:
-      "Delivered a custom Next.js storefront on top of Shopify's headless API, with a content strategy, new brand identity, and subscription tier for recurring bean deliveries.",
+      "Delivered a custom Next.js storefront on top of Shopify's headless API, with a content strategy, refreshed brand system, and repeat-purchase flows.",
     results: [
       "Online revenue went from $0 to $18K/month in 4 months",
-      "Subscription tier now accounts for 60% of monthly revenue",
-      "Feature in Atlanta Intown magazine drove 3K new visitors",
+      "Repeat-purchase flows now account for 60% of monthly revenue",
+      "Launch campaign drove 3K new visitors",
       "Cart abandonment rate reduced from 78% to 41%",
     ],
     liveUrl: "https://example.com",
@@ -83,7 +83,7 @@ export const projects: Project[] = [
       "A high-authority content platform with gated lead magnets that established the founder as a regional thought leader.",
     tags: ["Marketing Site", "Content Strategy", "Lead Magnets"],
     stack: ["Next.js 15", "MDX", "ConvertKit", "Tailwind CSS", "Vercel"],
-    hero: "https://images.unsplash.com/photo-1664575599736-c5197c684128?w=1200&q=80",
+    hero: "/hybertec-logo-centered.jpeg",
     problem:
       "The founder had 20+ years of expertise but no digital footprint. They were losing pitches to younger firms with stronger online presence.",
     solution:
