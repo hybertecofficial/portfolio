@@ -3,14 +3,12 @@ import { BrandMark } from "@/components/shared/BrandMark";
 
 const footerLinks = {
   Services: [
-    { href: "/services", label: "What we build" },
+    { href: "/services", label: "Services" },
     { href: "/services#pricing", label: "Pricing" },
     { href: "/contact", label: "Project inquiry" },
   ],
   Company: [
-    { href: "/about", label: "About" },
     { href: "/portfolio", label: "Case studies" },
-    { href: "/contact", label: "Contact" },
   ],
 };
 

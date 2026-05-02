@@ -42,7 +42,7 @@ export function BrandMark({ compact = false, onClick }: BrandMarkProps) {
           HyberTec
         </span>
         <span className="block pt-1 text-[10px] font-medium uppercase tracking-[0.24em] text-cream-muted">
-          Software and web partners
+          Software and web services
         </span>
       </div>
     </Link>

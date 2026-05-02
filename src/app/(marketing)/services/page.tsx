@@ -4,58 +4,37 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services & Pricing",
+  title: "Services",
   description:
-    "Flexible monthly plans for web development, SEO, and web application builds. No surprise invoices.",
+    "Websites, custom software, and ongoing support from HyberTec. Clear scope, modern builds, and no surprise invoices.",
 };
 
 const serviceDetails = [
   {
-    category: "Marketing & Lead Gen",
+    category: "Websites",
     icon: "◈",
     items: [
-      "Custom Next.js marketing sites (5–20 pages)",
-      "Mobile-first, accessibility-compliant builds",
-      "On-page SEO + structured data (JSON-LD)",
-      "Google Business Profile optimization",
-      "Contact forms, lead capture, CRM integration",
-      "99+ Lighthouse performance scores",
+      "Marketing sites and landing pages",
+      "Mobile-first responsive builds",
+      "Forms, lead capture, and basic SEO",
     ],
   },
   {
-    category: "Web Applications",
+    category: "Software",
     icon: "⬡",
     items: [
       "Client portals and internal dashboards",
-      "Authentication (Clerk / Auth0 / Supabase)",
-      "Role-based access control (RBAC)",
-      "Third-party API integrations",
-      "Admin panels with content management",
-      "Supabase / PostgreSQL database design",
+      "Booking flows and admin tools",
+      "API integrations and databases",
     ],
   },
   {
-    category: "SaaS Architecture",
-    icon: "◎",
-    items: [
-      "Multi-tenant platform design",
-      "Stripe billing with subscription tiers",
-      "Usage-based and seat-based pricing models",
-      "Proration, failed payment handling",
-      "Webhook infrastructure",
-      "TypeScript monorepo (Turborepo)",
-    ],
-  },
-  {
-    category: "Ongoing Retainers",
+    category: "Support",
     icon: "◐",
     items: [
-      "Hosting & SSL management",
-      "Performance monitoring & optimization",
-      "Security patches and dependency updates",
-      "Monthly analytics reporting",
-      "Content updates and new page builds",
-      "Priority support SLA",
+      "Content updates and new pages",
+      "Hosting, SSL, and maintenance",
+      "Performance fixes and improvements",
     ],
   },
 ];
@@ -63,60 +42,60 @@ const serviceDetails = [
 const faqs = [
   {
     q: "Do I have to commit to a long-term contract?",
-    a: "Our standard plans are month-to-month after the initial 3-month onboarding period. The Growth and Scale plans include a 12-month option at a discount.",
+    a: "Plans are designed to stay flexible. We scope the first phase clearly, then keep support month-to-month when possible.",
   },
   {
-    q: "What happens if I need more pages than my plan includes?",
-    a: "Additional pages are available as add-ons. We'll scope the work and give you a clear quote before any extra charges apply.",
-  },
-  {
-    q: "Do you work with businesses outside of Georgia?",
-    a: "Absolutely. We work with businesses across the US. Most of our discovery and review sessions happen via video call and async communication.",
-  },
-  {
-    q: "Who owns the code and the website?",
-    a: "You do. All deliverables — code, design assets, and content — are fully transferred to you upon project completion or at any point you cancel your plan.",
+    q: "Can you handle smaller requests?",
+    a: "Yes. Smaller website edits, landing pages, forms, and workflow fixes are a good fit when the scope is clear.",
   },
   {
     q: "How long does a new website take?",
-    a: "Starter sites typically launch in 2–3 weeks. Growth-tier sites with more pages and integrations take 4–6 weeks. Custom web apps are scoped individually.",
+    a: "Simple sites usually take 2-3 weeks. Larger websites and software builds are scoped around the actual work needed.",
   },
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Header */}
+      {/* About */}
       <section className="pt-20 pb-16 border-b border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="w-5 h-px bg-lime" />
-            <span className="section-label">Services</span>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[1fr_0.85fr] md:items-center">
+            <SectionHeader
+              label="About HyberTec"
+              title="Reliable digital execution for service businesses"
+              subtitle="HyberTec helps businesses turn scattered website and software requests into clear, maintainable builds."
+            />
+
+            <div className="rounded-3xl bg-surface border border-border p-6">
+              {[
+                { value: "2026", label: "Founded" },
+                { value: "40+", label: "Projects shipped" },
+                { value: "US-wide", label: "Client reach" },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center justify-between border-b border-border py-4 first:pt-0 last:border-0 last:pb-0"
+                >
+                  <span className="font-body text-sm text-cream-muted">{item.label}</span>
+                  <span className="font-display font-700 text-xl text-cream">{item.value}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <h1 className="font-display font-800 text-5xl md:text-7xl text-cream leading-tight mb-6">
-            Everything your web
-            <br />
-            presence needs —
-            <br />
-            <span className="text-lime">monthly, not once.</span>
-          </h1>
-          <p className="font-body text-cream-muted text-lg max-w-xl leading-relaxed">
-            We replace the anxiety of big one-time invoices with predictable monthly
-            plans that keep your site growing, secure, and performing.
-          </p>
         </div>
       </section>
 
       {/* What's included */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
             label="Capabilities"
-            title="What we actually build"
-            className="mb-12"
+            title="What we build"
+            className="mb-10"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {serviceDetails.map((service) => (
               <div
                 key={service.category}
@@ -143,14 +122,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-24 border-t border-border">
+      <section id="pricing" className="py-16 border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
             label="Pricing"
-            title="Simple plans, no surprises"
-            subtitle="All plans are billed monthly. Cancel anytime after the initial 3-month onboarding period."
+            title="Cheaper monthly options"
             align="center"
-            className="mb-12"
+            className="mb-10"
           />
           <PricingTable />
 
@@ -165,13 +143,13 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 border-t border-border">
+      <section className="py-16 border-t border-border">
         <div className="max-w-3xl mx-auto px-6">
           <SectionHeader
             label="FAQ"
             title="Common questions"
             align="center"
-            className="mb-12"
+            className="mb-10"
           />
 
           <div className="space-y-4">

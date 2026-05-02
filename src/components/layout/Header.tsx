@@ -10,8 +10,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Work" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -21,10 +19,10 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
       <div className="site-shell">
-        <div className="surface-panel flex h-16 items-center justify-between px-4 sm:px-5">
+        <div className="surface-panel relative flex h-16 items-center justify-between px-4 sm:px-5">
           <BrandMark compact onClick={() => setOpen(false)} />
 
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
             {navLinks.map((link) => {
               const active = pathname === link.href;
 
