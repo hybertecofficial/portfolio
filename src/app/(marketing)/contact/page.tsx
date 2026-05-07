@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 
+// Get a free access key at https://web3forms.com — submissions are
+// forwarded to the email address you sign up with. This key is safe to
+// commit; it only authorizes form submissions, not account access.
+const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+
 const contactReasons = [
   "New website build",
   "Web application / portal",
@@ -44,11 +49,39 @@ const labelClass =
 export default function ContactPage() {
   const [selected, setSelected] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: wire up to your email/form provider (Resend, Formspree, etc.)
-    setSubmitted(true);
+    setSubmitting(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.set("access_key", WEB3FORMS_ACCESS_KEY);
+    data.set("reason", selected);
+    data.set(
+      "subject",
+      `New inquiry from ${data.get("name") || "the contact form"}`,
+    );
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Couldn't reach the server. Please try again in a moment.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -142,6 +175,14 @@ export default function ContactPage() {
                   onSubmit={handleSubmit}
                   className="rounded-2xl bg-surface border border-border p-6 md:p-8 space-y-5"
                 >
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="hidden"
+                  />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className={labelClass}>
@@ -244,8 +285,18 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <button type="submit" className="button-primary w-full py-3.5">
-                    Send Message
+                  {error && (
+                    <p className="font-body text-sm text-red-400" role="alert">
+                      {error}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="button-primary w-full py-3.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               )}
